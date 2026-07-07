@@ -27,6 +27,7 @@ jobs:
             meson \
             ninja \
             glib2 \
+            libjxl \
             github-cli
 
       - name: Create build user
