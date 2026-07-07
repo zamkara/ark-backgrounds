@@ -15,6 +15,9 @@ jobs:
       image: ghcr.io/archlinux/archlinux:latest
 
     steps:
+      - name: Install git
+        run: pacman -Syu --noconfirm git
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
