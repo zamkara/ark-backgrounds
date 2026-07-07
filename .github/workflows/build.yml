@@ -1,0 +1,58 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/archlinux/archlinux:latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm \
+            base-devel \
+            sudo \
+            meson \
+            ninja \
+            glib2 \
+            github-cli
+
+      - name: Create build user
+        run: |
+          useradd -m builduser
+          echo 'builduser ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+          chown -R builduser:builduser .
+
+      - name: Build package
+        run: sudo -u builduser makepkg -f --clean --noconfirm
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="$(git rev-parse --short HEAD)"
+          SHA="$(git rev-parse HEAD)"
+          SUBJECT="$(git log -1 --format=%s)"
+          BODY="$(git log -1 --format=%b)"
+
+          printf '**Commit:** `%s`\n\n**Message:** %s\n\n%s\n' \
+            "$SHA" "$SUBJECT" "$BODY" > /tmp/notes.md
+
+          PKG_FILE=$(ls *.pkg.tar.zst | head -1)
+
+          gh release create "$TAG" \
+            --title "ark-backgrounds @ ${TAG}" \
+            --notes-file /tmp/notes.md \
+            "$PKG_FILE" || true

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>Grid</name>
+    <filename>@BACKGROUNDDIR@/grid.jxl</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#111111</pcolor>
+    <scolor>#111111</scolor>
+  </wallpaper>
+</wallpapers>

@@ -1,0 +1,20 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">ark-backgrounds</name>
+  <shortdesc xml:lang="en">Background images for Ark Linux</shortdesc>
+  <download-page rdf:resource="https://github.com/zamkara/ark-backgrounds" />
+  <bug-database rdf:resource="https://github.com/zamkara/ark-backgrounds/issues" />
+  <programming-language>Blender</programming-language>
+  <description>Default wallpapers for Ark Linux, forked from GNOME/gnome-backgrounds.</description>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>zamkara</foaf:name>
+      <foaf:mbox rdf:resource="mailto:zamkara@gnuweeb.org" />
+    </foaf:Person>
+  </maintainer>
+</Project>
