@@ -46,6 +46,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          git config --global --add safe.directory "$PWD"
           TAG="$(git rev-parse --short HEAD)"
           SHA="$(git rev-parse HEAD)"
           SUBJECT="$(git log -1 --format=%s)"
