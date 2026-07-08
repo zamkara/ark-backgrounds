@@ -9,7 +9,6 @@ url="https://github.com/zamkara/ark-backgrounds"
 license=('CC-BY-SA-3.0')
 depends=('libjxl')
 makedepends=('meson' 'ninja' 'glib2')
-install=ark-backgrounds.install
 source=()
 sha256sums=()
 
