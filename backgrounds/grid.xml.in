@@ -3,7 +3,7 @@
 <wallpapers>
   <wallpaper deleted="false">
     <name>Grid</name>
-    <filename>@BACKGROUNDDIR@/grid.jxl</filename>
+    <filename>@BACKGROUNDDIR@/grid.heic</filename>
     <options>zoom</options>
     <shade_type>solid</shade_type>
     <pcolor>#111111</pcolor>

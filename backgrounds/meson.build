@@ -1,5 +1,5 @@
 backgrounds = [
-  'grid.jxl',
+  'grid.heic',
 ]
 
 install_data(backgrounds, install_dir: backgrounddir)

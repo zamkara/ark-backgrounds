@@ -7,7 +7,6 @@ pkgdesc="Background images for Ark Linux, forked from GNOME/gnome-backgrounds"
 arch=('any')
 url="https://github.com/zamkara/ark-backgrounds"
 license=('CC-BY-SA-3.0')
-depends=('libjxl')
 makedepends=('meson' 'ninja' 'glib2')
 source=()
 sha256sums=()
