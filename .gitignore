@@ -16,3 +16,4 @@ meson-private/
 .cache/
 .vscode/
 .idea/
+.DS_Store
